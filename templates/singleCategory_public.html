@@ -1,0 +1,41 @@
+{% extends "main.html" %}
+{% block content %}
+{% include "header.html" %}
+	<div class="row top-menu">
+		<div class="col-md-10"></div>
+		<div class="col-md-2 text-right">
+					</div>
+	</div>
+	<div class="row divider blue">
+		<div class="col-md-12"></div>
+	</div>
+	<div class="row banner main">
+		<div class="col-md-1"></div>
+	<body>
+		{% if breeds !=[] %}
+		<div class = 'pane'>
+		<h1>{{ category.name }} Category</h1>
+
+
+		{% for i in breeds %}
+
+		<h2>{{i.name}}</h2>
+		<p>Popularity rank: {{i.rank}}</p>
+		<a href = '{{url_for('breedDescription', category_id=category.id, breed_id=i.id ) }}'>View Details</a><br>
+
+</br>
+</br>
+
+		{% endfor %}
+
+		{% else %}
+		<p>There are no breeds in this category yet.</p><br><br>
+		{% endif %}
+
+
+		
+	
+</div>
+	</body>
+
+	{% endblock %}

@@ -1,0 +1,30 @@
+ {% extends "main.html" %}
+    {% block content %}
+    {% include "header.html" %}
+    <div class="row top-menu">
+		<div class="col-md-10"></div>
+		<div class="col-md-2 text-right">
+					</div>
+	</div>
+	<div class="row divider blue">
+		<div class="col-md-12"></div>
+	</div>	
+	<body>
+		<div class = 'pane'>
+        <h1>{{ breed.name }}</h1>
+        <p>{{breed.description}}</p>
+
+        <p>Popularity rank: {{breed.rank}}</p>
+        <a title={{breed.photo_attribution}} href={{breed.photo}}><img width="512" src={{breed.photo}}></a>
+        <br>
+		<a href='{{url_for('editBreed',breed_id=breed.id,category_id=breed.category_id)}}' >Edit</a>
+		</br>
+    	<a href='{{url_for('deleteBreed',breed_id=breed.id,category_id=breed.category_id)}}' >Delete</a>
+    	<p>Ranks and descriptions from the American Kennel Club</p>
+	</br>
+	</br>
+
+	</div>
+	</body>
+
+{% endblock %}

@@ -1,0 +1,33 @@
+<html>
+
+<head>
+<link rel=stylesheet type=text/css href="{{ url_for('static', filename='styles.css') }}">
+	</head>
+
+<body><h1> Edit Breed </h1>
+
+<form action="#" method = 'post'>
+
+	<p>Name:</p>
+		<input type ='text' size='30' name='name' placeholder='{{breed.name}}'>
+	<p>Description:</p>
+		<input type ='text' size='30' name='description' placeholder='{{breed.description}}'>
+	<p>Rank:</p>
+		<input type ='text' size='30' name='rank' placeholder='{{breed.rank}}'>
+	<p>Photo link:</p>
+		<input type ='text' size='30' name='photo' placeholder='{{breed.photo}}'>
+	<p>Photo attribution:</p>
+		<input type ='text' size='30' name='photo_attribution' placeholder='{{breed.photo_attribution}}'>
+
+
+
+<input type='submit' value='Edit'>
+
+
+<a href = {{url_for('singleCategory', category_id=breed.category_id)}}> Cancel </a>
+
+
+</form>
+</body>
+</html>
+
